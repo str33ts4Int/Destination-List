@@ -23,8 +23,20 @@ data-bs-theme="dark"
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="/films"
-          >Movies</a>
+        <a class="nav-link active" aria-current="page" href="/destinations"
+          >Destinations</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/categories"
+          >Categories</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/mylist"
+          >My List</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/contact"
+          >Contact</a>
       </li>
     </ul>
   </div>
