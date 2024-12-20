@@ -1,5 +1,6 @@
 import { MongoClient, ObjectId } from "mongodb"; // See https://www.mongodb.com/docs/drivers/node/current/quick-start/
 import { DB_URI } from "$env/static/private";
+import { get } from "svelte/store";
 
 const client = new MongoClient(DB_URI);
 
@@ -10,26 +11,48 @@ const db = client.db("DestinationList"); // select database
 // Destinations
 //////////////////////////////////////////
 
-// Get all movies
-async function getMovies() {
-  let movies = [];
+// Get all destinations
+async function getDestinations() {
+  let destinations = [];
   try {
-    const collection = db.collection("movies");
+    const collection = db.collection("destinations");
 
     // You can specify a query/filter here
     // See https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/query-document/
     const query = {};
 
     // Get all objects that match the query
-    movies = await collection.find(query).toArray();
-    movies.forEach((movie) => {
-      movie._id = movie._id.toString(); // convert ObjectId to String
+    destinations = await collection.find(query).toArray();
+    destinations.forEach((destinations) => {
+      destinations._id = destinations._id.toString(); // convert ObjectId to String
     });
   } catch (error) {
     console.log(error);
     // TODO: errorhandling
   }
-  return movies;
+  return destinations;
+}
+
+// Get all categories
+async function getCategories() {
+  let categories = [];
+  try {
+    const collection = db.collection("categories");
+
+    // You can specify a query/filter here
+    // See https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/query-document/
+    const query = {};
+
+    // Get all objects that match the query
+    categories = await collection.find(query).toArray();
+    categories.forEach((categories) => {
+      categories._id = categories._id.toString(); // convert ObjectId to String
+    });
+  } catch (error) {
+    console.log(error);
+    // TODO: errorhandling
+  }
+  return categories;
 }
 
 // Get movie by id
@@ -140,8 +163,8 @@ async function deleteMovie(id) {
 
 // export all functions so that they can be used in other files
 export default {
-  getMovies,
-  getMovie,
+  getDestinations,
+  getCategories,
   createMovie,
   updateMovie,
   deleteMovie,
