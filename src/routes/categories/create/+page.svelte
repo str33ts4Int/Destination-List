@@ -18,7 +18,7 @@
 </form>
 
 {#if form?.success}
-    <div class="alert alert-success" role="alert">
+    <div class="alert alert-success mt-4" role="alert">
         <strong>Success!</strong> Category successfully created!
     </div>
 {/if}

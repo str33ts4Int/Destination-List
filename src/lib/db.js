@@ -33,6 +33,89 @@ async function getDestinations() {
   return destinations;
 }
 
+// Get destination by id
+async function getDestination(id) {
+  let destination = null;
+  try {
+    const collection = db.collection("destinations");
+    const query = { _id: new ObjectId(id) }; // filter by id
+    destination = await collection.findOne(query);
+    if (!destination) {
+      console.log("No destination with id " + id);
+      // TODO: errorhandling
+    } else {
+      destination._id = destination._id.toString(); // convert ObjectId to String
+    }
+  } catch (error) {
+    // TODO: errorhandling
+    console.log(error.message);
+  }
+  return destination;
+}
+
+// create destination
+async function createDestination(destination) {
+  destination.image = "/images/placeholderImage.png"; // default image for new destinations
+  try {
+    const collection = db.collection("destinations");
+    const result = await collection.insertOne(destination);
+    return result.insertedId.toString(); // convert ObjectId to String
+  } catch (error) {
+    // TODO: error handling
+    console.log(error.message);
+  }
+  return null;
+}
+
+// update destination
+// returns: id of the updated destination or null, if destination could not be updated
+async function updateDestination(destination) {
+  try {
+    let id = destination._id;
+    delete destination._id; // delete the _id from the object, because the _id cannot be updated
+    const collection = db.collection("destinations");
+    const query = { _id: new ObjectId(id) }; // filter by id
+    const result = await collection.updateOne(query, { $set: destination });
+
+    if (result.matchedCount === 0) {
+      console.log("No destination with id " + id);
+      // TODO: errorhandling
+    } else {
+      console.log("destination with id " + id + " has been updated.");
+      return id;
+    }
+  } catch (error) {
+    // TODO: errorhandling
+    console.log(error.message);
+  }
+  return null;
+}
+
+// delete destination by id
+// returns: id of the deleted destination or null, if destination could not be deleted
+async function deleteDestination(id) {
+  try {
+    const collection = db.collection("destinations");
+    const query = { _id: new ObjectId(id) }; // filter by id
+    const result = await collection.deleteOne(query);
+
+    if (result.deletedCount === 0) {
+      console.log("No destination with id " + id);
+    } else {
+      console.log("destination with id " + id + " has been successfully deleted.");
+      return id;
+    }
+  } catch (error) {
+    // TODO: errorhandling
+    console.log(error.message);
+  }
+  return null;
+}
+
+//////////////////////////////////////////
+// Categories
+//////////////////////////////////////////
+
 // Get all categories
 async function getCategories() {
   let categories = [];
@@ -77,15 +160,6 @@ async function getCategory(id) {
   return category;
 }
 
-// create category
-// Example category object:
-/* 
-{ 
-  title: "Das Geheimnis von Altura",
-  year: 2024,
-  length: "120 Minuten"
-} 
-*/
 async function createCategory(category) {
   category.icon = "/images/placeholderIcon.png"; // default icon for new categories
   try {
@@ -99,23 +173,7 @@ async function createCategory(category) {
   return null;
 }
 
-// update movie
-// Example movie object:
-/* 
-{ 
-  _id: "6630e72c95e12055f661ff13",
-  title: "Das Geheimnis von Altura",
-  year: 2024,
-  length: "120 Minuten",
-  actors: [
-    "Lena Herzog",
-    "Maximilian Schröder",
-    "Sophia Neumann"
-  ],
-  poster: "/images/Altura.png",
-  watchlist: false
-} 
-*/
+// update category
 // returns: id of the updated category or null, if category could not be updated
 async function updateCategory(category) {
   try {
@@ -163,6 +221,10 @@ async function deleteCategory(id) {
 // export all functions so that they can be used in other files
 export default {
   getDestinations,
+  getDestination,
+  createDestination,
+  updateDestination,
+  deleteDestination,
   getCategories,
   getCategory,
   createCategory,

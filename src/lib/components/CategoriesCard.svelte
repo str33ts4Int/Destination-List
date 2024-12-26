@@ -11,7 +11,7 @@
             <a href={"/categories/" + category._id}>{category.name}</a>
         </div>
         <div>
-            Beschreibung: {category.description}
+            <strong>Description:</strong> {category.description}
         </div>
     </div>
 </div>
