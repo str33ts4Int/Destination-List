@@ -1,18 +1,16 @@
 <script>
-    let firstName = '';
-    let lastName = '';
-    let email = '';
-    let phone = '';
-    let reason = '';
+    let { form } = $props();
+    let firstName = $state();
+    let lastName = $state();
+    let email = $state();
+    let phone = $state();
+    let reason = $state();
 
-    function handleSubmit() {
-        alert(`Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nReason: ${reason}`);
-    }
 </script>
 
 <h1>Contact Us</h1>
 
-<form on:submit|preventDefault={handleSubmit}>
+<form on:submit|preventDefault={form}>
     <div class="form-group">
         <label for="firstName">First Name:</label>
         <input type="text" id="firstName" bind:value={firstName} required />

@@ -50,34 +50,35 @@ async function getCategories() {
     });
   } catch (error) {
     console.log(error);
+    throw new Error("Failed to fetch categories");
     // TODO: errorhandling
   }
   return categories;
 }
 
-// Get movie by id
-async function getMovie(id) {
-  let movie = null;
+// Get category by id
+async function getCategory(id) {
+  let category = null;
   try {
-    const collection = db.collection("movies");
+    const collection = db.collection("categories");
     const query = { _id: new ObjectId(id) }; // filter by id
-    movie = await collection.findOne(query);
+    category = await collection.findOne(query);
 
-    if (!movie) {
-      console.log("No movie with id " + id);
+    if (!category) {
+      console.log("No category with id " + id);
       // TODO: errorhandling
     } else {
-      movie._id = movie._id.toString(); // convert ObjectId to String
+      category._id = category._id.toString(); // convert ObjectId to String
     }
   } catch (error) {
     // TODO: errorhandling
     console.log(error.message);
   }
-  return movie;
+  return category;
 }
 
-// create movie
-// Example movie object:
+// create category
+// Example category object:
 /* 
 { 
   title: "Das Geheimnis von Altura",
@@ -85,16 +86,14 @@ async function getMovie(id) {
   length: "120 Minuten"
 } 
 */
-async function createMovie(movie) {
-  movie.poster = "/images/placeholder.jpg"; // default poster
-  movie.actors = [];
-  movie.watchlist = false;
+async function createCategory(category) {
+  category.icon = "/images/placeholderIcon.png"; // default icon for new categories
   try {
-    const collection = db.collection("movies");
-    const result = await collection.insertOne(movie);
+    const collection = db.collection("categories");
+    const result = await collection.insertOne(category);
     return result.insertedId.toString(); // convert ObjectId to String
   } catch (error) {
-    // TODO: errorhandling
+    // TODO: error handling
     console.log(error.message);
   }
   return null;
@@ -117,20 +116,20 @@ async function createMovie(movie) {
   watchlist: false
 } 
 */
-// returns: id of the updated movie or null, if movie could not be updated
-async function updateMovie(movie) {
+// returns: id of the updated category or null, if category could not be updated
+async function updateCategory(category) {
   try {
-    let id = movie._id;
-    delete movie._id; // delete the _id from the object, because the _id cannot be updated
-    const collection = db.collection("movies");
+    let id = category._id;
+    delete category._id; // delete the _id from the object, because the _id cannot be updated
+    const collection = db.collection("categories");
     const query = { _id: new ObjectId(id) }; // filter by id
-    const result = await collection.updateOne(query, { $set: movie });
+    const result = await collection.updateOne(query, { $set: category });
 
     if (result.matchedCount === 0) {
-      console.log("No movie with id " + id);
+      console.log("No category with id " + id);
       // TODO: errorhandling
     } else {
-      console.log("Movie with id " + id + " has been updated.");
+      console.log("category with id " + id + " has been updated.");
       return id;
     }
   } catch (error) {
@@ -140,18 +139,18 @@ async function updateMovie(movie) {
   return null;
 }
 
-// delete movie by id
-// returns: id of the deleted movie or null, if movie could not be deleted
-async function deleteMovie(id) {
+// delete category by id
+// returns: id of the deleted category or null, if category could not be deleted
+async function deleteCategory(id) {
   try {
-    const collection = db.collection("movies");
+    const collection = db.collection("categories");
     const query = { _id: new ObjectId(id) }; // filter by id
     const result = await collection.deleteOne(query);
 
     if (result.deletedCount === 0) {
-      console.log("No movie with id " + id);
+      console.log("No category with id " + id);
     } else {
-      console.log("Movie with id " + id + " has been successfully deleted.");
+      console.log("category with id " + id + " has been successfully deleted.");
       return id;
     }
   } catch (error) {
@@ -165,7 +164,8 @@ async function deleteMovie(id) {
 export default {
   getDestinations,
   getCategories,
-  createMovie,
-  updateMovie,
-  deleteMovie,
+  getCategory,
+  createCategory,
+  updateCategory,
+  deleteCategory,
 };
