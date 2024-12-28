@@ -17,7 +17,7 @@ export const actions = {
             description: data.get("description"),
             main_attraction: data.get("main_attraction"),
             best_season_to_visit: data.get("best_season_to_visit"),
-            tags: tags, // Attach the tags array
+            tags: data.getAll("tags[]"),
         };
         await db.createDestination(destination);
         return { success: true };
