@@ -12,7 +12,7 @@
                     src="images/DestinationListTitle.png"
                     class="d-block w-100"
                     alt="Destination List"
-                    style="max-height: 600px;"
+                    style="max-height: 900px;"
                 />
             </div>
             <div class="carousel-item">
@@ -20,7 +20,7 @@
                     src="images/DestinationList.png"
                     class="d-block w-100"
                     alt="Destination List"
-                    style="max-height: 600px;"
+                    style="max-height: 900px;"
                 />
             </div>
             <div class="carousel-item">
@@ -28,7 +28,7 @@
                     src="images/DestinationList2.png"
                     class="d-block w-100"
                     alt="Destination List"
-                    style="max-height: 600px;"
+                    style="max-height: 900px;"
                 />
             </div>
             <div class="carousel-item">
@@ -36,7 +36,7 @@
                     src="images/DestinationList3.png"
                     class="d-block w-100"
                     alt="Destination List"
-                    style="max-height: 600px;"
+                    style="max-height: 900px;"
                 />
             </div>
         </div>
@@ -62,23 +62,24 @@
 </div>
 
 <h2 class="mt-4">About</h2>
-<p>
-    Destination List is a simple web application that allows you to manage a
-    list of destinations.
-</p>
+    <p class="text-muted">
+        Destination List is a simple web application that allows you to manage a list of destinations.
+    </p>
 
-<h2>Features</h2>
-<ul>
-    <li>View a list of destinations</li>
-    <li>Add a new destination</li>
-    <li>Add a new category</li>
-    <li>Update an existing destination</li>
-    <li>Update an existing category</li>
-    <li>Delete a destination</li>
-    <li>Delete a category</li>
-    <li>Add Destinations to your list</li>
-    <li>Delete Destinations from your list</li>
-</ul>
+    <h2 class="mt-4">Features</h2>
+    <ul class="list-group">
+        <li class="list-group-item">View a list of destinations</li>
+        <li class="list-group-item">Add a new destination</li>
+        <li class="list-group-item">Add a new category</li>
+        <li class="list-group-item">Update an existing destination</li>
+        <li class="list-group-item">Update an existing category</li>
+        <li class="list-group-item">Delete a destination</li>
+        <li class="list-group-item">Delete a category</li>
+        <li class="list-group-item">Add Destinations to your list</li>
+        <li class="list-group-item">Delete Destinations from your list</li>
+    </ul>
 
-<h5 class="mt-5">created by shariaad@students.zhaw.ch</h5>
-<h6>Prototyping LN2</h6>
+    <footer class="text-center mt-5">
+        <h5>created by shariaad@students.zhaw.ch</h5>
+        <h6>Prototyping LN2</h6>
+    </footer>

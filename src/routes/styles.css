@@ -50,3 +50,11 @@ button {
 button:hover {
     background-color: #0056b3;
 }
+
+.container {
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
