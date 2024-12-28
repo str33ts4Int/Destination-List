@@ -90,3 +90,14 @@
             <strong>Success!</strong> Destination successfully updated!
         </div>
     {/if}
+
+    <form method="POST" action="?/delete">
+        <input type="hidden" name="id" value={destination._id}>
+        <button type="submit" class="btn btn-danger mt-3">Delete Destination</button>
+    </form>
+
+    {#if form?.deleteSuccess}
+        <div class="alert alert-success mt-4" role="alert">
+            <strong>Success!</strong> Destination successfully deleted!
+        </div>
+    {/if}
