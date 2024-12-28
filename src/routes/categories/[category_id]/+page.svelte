@@ -2,6 +2,7 @@
     let { data } = $props();
     console.log(data);
     let category = data.category;
+    let destination = data.destinations;
 </script>
 
 <a class="btn btn-primary mt-4" href="/categories">← Back to Categories</a>
@@ -20,10 +21,20 @@
         </div>
     </div>
 </div>
+
+<h2 class="mt-4">Destinations with this Category</h2>
+<div class="row mt-3">
+    {#each destination as dest}
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-2 gx-2">
+            { dest.name }
+        </div>
+    {/each}
+</div>
+
 <div class="card shadow-sm mb-4 mt-4">
     <form method="POST" action="?/update">
         <input type="hidden" name="id" value={category._id}>
-        <div class="mb-3 ">
+        <div class="mb-3">
             <label for="category-name" class="form-label">Category Name</label>
             <input id="category-name" name="name" class="form-control" type="text" value={category.name} />
         </div>

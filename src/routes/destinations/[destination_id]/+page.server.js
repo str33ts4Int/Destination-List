@@ -5,13 +5,14 @@ export async function load({ params }) {
     console.log("Received destination_id:", params.destination_id);
 
     const destination = await db.getDestination(params.destination_id);
+    const categories = await db.getCategories();
 
     if (!destination) {
         console.log("Destination not found:", params.destination_id);
         throw error(404, "Destination not found");
     }
 
-    return { destination };
+    return { destination, categories };
 }
 
 export const actions = { 
@@ -28,7 +29,7 @@ export const actions = {
         const description = data.get("description");
         const main_attraction = data.get("main_attraction");
         const best_season_to_visit = data.get("best_season_to_visit");
-        const tags = data.get("tags");
+        const tags = data.getAll("tags[]");
 
         const updatedDestination = {
             _id: id,

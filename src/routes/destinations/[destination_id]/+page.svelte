@@ -1,7 +1,22 @@
 <script>
-    let { data } = $props();
+    let { data, form } = $props();
     console.log(data);
     let destination = data.destination;
+    let categories = data.categories;
+    let selectedTags = new Set(destination.tags);
+
+    function toggleTag(tag) {
+        if (selectedTags.has(tag)) {
+            selectedTags.delete(tag);
+        } else {
+            selectedTags.add(tag);
+        }
+        console.log("Selected tags:", Array.from(selectedTags));
+    }
+
+    function isSelected(tag) {
+        return selectedTags.has(tag);
+    }
 </script>
 
 <a class="btn btn-primary mt-4" href="/destinations">← Back to Destinations</a>
@@ -23,8 +38,9 @@
         </div>
     </div>
 </div>
-<div class="card shadow-sm mb-4 mt-4">
-    <h1 class="mt-2">Update Destination</h1>
+
+    <h1 class="mt-4">Update Destination</h1>
+
     <form method="POST" action="?/update">
         <input type="hidden" name="id" value={destination._id}>
         <div class="mb-3">
@@ -48,13 +64,29 @@
             <textarea id="destination-best_season_to_visit" name="best_season_to_visit" class="form-control">{destination.best_season_to_visit}</textarea>
         </div>
         <div class="mb-3">
-            <label for="destination-tags" class="form-label">Tags</label>
-            <textarea id="destination-tags" name="tags" class="form-control">{destination.tags}</textarea>
+            <label class="form-label">Tags</label>
+            <div>
+                {#each categories as category}
+                    <button
+                        type="button"
+                        class="btn {isSelected(category.name) ? 'btn-primary' : 'btn-outline-primary'} btn-sm me-2 mb-2"
+                        on:click={() => toggleTag(category.name)}
+                    >
+                        {category.name}
+                    </button>
+                {/each}
+            </div>
+            <!-- Hidden inputs to send selected tags in the form -->
+            {#each Array.from(selectedTags) as tag}
+                <input type="hidden" name="tags[]" value={tag} />
+            {/each}
         </div>
-        <button class="btn btn-primary">Update Destination</button>
+        <button type="submit" class="btn btn-success">Update Destination</button>
     </form>
-    <form method="POST" action="?/delete">
-        <input type="hidden" name="id" value={destination._id}>
-        <button class="btn btn-danger">Delete Destination</button>
-    </form>
-</div>
+    
+    
+    {#if form?.success}
+        <div class="alert alert-success mt-4" role="alert">
+            <strong>Success!</strong> Destination successfully updated!
+        </div>
+    {/if}

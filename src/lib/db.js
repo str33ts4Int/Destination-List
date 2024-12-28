@@ -218,6 +218,18 @@ async function deleteCategory(id) {
   return null;
 }
 
+//////////////////////////////////////////
+// Special functions
+//////////////////////////////////////////
+
+async function getDestinationsByTag(tag) {
+  const collection = db.collection("destinations");
+  const query = { tags: tag }; // Filter by tag
+  const destinations = await collection.find(query).toArray();
+  return destinations;
+}
+
+
 // export all functions so that they can be used in other files
 export default {
   getDestinations,
@@ -230,4 +242,5 @@ export default {
   createCategory,
   updateCategory,
   deleteCategory,
+  getDestinationsByTag
 };
