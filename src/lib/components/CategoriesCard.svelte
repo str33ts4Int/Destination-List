@@ -69,6 +69,11 @@
         font-size: 0.9rem;
         color: #555; /* Optional muted text color */
         flex-grow: 1; /* Allow the description to grow and take up available space */
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Show only 3 lines of text */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .category-card .btn {
@@ -77,3 +82,4 @@
         padding: 0.5rem 1rem;
     }
 </style>
+

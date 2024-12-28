@@ -24,12 +24,20 @@ export const actions = {
         const data = await request.formData();
         const id = data.get("id");
         const name = data.get("name");
+        const country = data.get("country");
         const description = data.get("description");
+        const main_attraction = data.get("main_attraction");
+        const best_season_to_visit = data.get("best_season_to_visit");
+        const tags = data.get("tags");
 
         const updatedDestination = {
             _id: id,
             name,
-            description
+            country,
+            description,
+            main_attraction,
+            best_season_to_visit,
+            tags
         };
 
         const result = await db.updateDestination(updatedDestination);
