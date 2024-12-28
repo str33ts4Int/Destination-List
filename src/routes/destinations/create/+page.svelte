@@ -58,13 +58,13 @@
       <textarea id="destination-best_season_to_visit" name="best_season_to_visit" class="form-control" bind:value={destination.best_season_to_visit}></textarea>
     </div>
     <div class="mb-3">
-      <label class="form-label">Tags</label>
-      <div>
+      <label for="tags" class="form-label">Tags</label>
+      <div id="tags">
         {#each categories as category}
           <button
             type="button"
             class="btn {isSelected(category.name) ? 'btn-primary' : 'btn-outline-primary'} btn-sm me-2 mb-2"
-            on:click={() => toggleTag(category.name)}
+            onclick={() => toggleTag(category.name)}
           >
             {category.name}
           </button>
