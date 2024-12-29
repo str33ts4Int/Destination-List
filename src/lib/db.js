@@ -230,6 +230,8 @@ async function getDestinationsByTag(tag) {
 }
 
 
+
+
 // export all functions so that they can be used in other files
 export default {
   getDestinations,

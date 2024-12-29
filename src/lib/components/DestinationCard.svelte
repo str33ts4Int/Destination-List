@@ -1,4 +1,5 @@
 <script>
+    import { enhance } from "$app/forms";
     let { destination } = $props();
 </script>
 
@@ -24,25 +25,36 @@
 
         <!-- Country -->
         <p class="card-text">
-            <strong>Country:</strong>
-            {destination.country}
+            <strong>Country:</strong> {destination.country}
         </p>
 
         <!-- Description -->
         <p class="card-text">
-            <strong>Description:</strong>
-            {destination.description}
+            <strong>Description:</strong> {destination.description}
         </p>
+
+        <!-- Add/Remove from MyList -->
+        {#if destination.mylist}
+        <form method="POST" action="?/removeFromMyList" class="mt-3" use:enhance>
+            <input name="id" type="hidden" value={destination._id}>
+            <button class="btn btn-remove-from-mylist w-100">Remove from MyList</button>
+        </form>
+        {:else}
+        <form method="POST" action="?/addToMyList" class="mt-3" use:enhance>
+            <input name="id" type="hidden" value={destination._id}>
+            <button class="btn btn-add-to-mylist w-100">Add to MyList</button>
+        </form>
+        {/if}
 
         <!-- Action Buttons -->
         <div class="mt-3 d-flex justify-content-between">
             <a
                 href={"/destinations/" + destination._id}
-                class="btn btn-primary btn-sm"
+                class="btn btn-primary-modern btn-sm"
             >
                 View Details
             </a>
-            <a href="/contact" class="btn btn-outline-secondary btn-sm">
+            <a href="/contact" class="btn btn-outline-secondary-modern btn-sm">
                 Contact Us
             </a>
         </div>
@@ -109,23 +121,64 @@
         font-size: 0.9rem; /* Slightly smaller button font size */
     }
 
-    .destination-card .btn-primary {
-        background-color: #007bff; /* Bootstrap primary color */
-        border: none; /* Remove button border */
+    /* Add to MyList Button */
+    .btn-add-to-mylist {
+        background: linear-gradient(to right, #00c853, #64dd17); /* Modern green gradient */
+        color: white;
+        border: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
     }
 
-    .destination-card .btn-primary:hover {
-        background-color: #0056b3; /* Darker blue on hover */
+    .btn-add-to-mylist:hover {
+        background: linear-gradient(to right, #64dd17, #00c853); /* Hover effect */
+        transform: scale(1.05);
     }
 
-    .destination-card .btn-outline-secondary {
-        border: 1px solid #6c757d; /* Border for outline button */
+    /* Remove from MyList Button */
+    .btn-remove-from-mylist {
+        background: linear-gradient(to right, #d50000, #ff1744); /* Modern red gradient */
+        color: white;
+        border: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+    }
+
+    .btn-remove-from-mylist:hover {
+        background: linear-gradient(to right, #ff1744, #d50000); /* Hover effect */
+        transform: scale(1.05);
+    }
+
+    /* Primary Modern Button */
+    .btn-primary-modern {
+        background: linear-gradient(to right, #007bff, #0056b3); /* Modern blue gradient */
+        color: white;
+        border: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary-modern:hover {
+        background: linear-gradient(to right, #0056b3, #007bff); /* Hover effect */
+        transform: scale(1.05);
+    }
+
+    /* Outline Secondary Modern Button */
+    .btn-outline-secondary-modern {
+        border: 2px solid #6c757d; /* Thicker border for modern feel */
         color: #6c757d; /* Text color */
+        font-weight: bold;
+        text-transform: uppercase;
+        background: transparent;
+        transition: all 0.3s ease;
     }
 
-    .destination-card .btn-outline-secondary:hover {
-        background-color: #6c757d; /* Darker background on hover */
+    .btn-outline-secondary-modern:hover {
+        background: #6c757d; /* Darker background on hover */
         color: #ffffff; /* White text on hover */
+        transform: scale(1.05);
     }
 </style>
-
