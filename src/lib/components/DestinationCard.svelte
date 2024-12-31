@@ -110,6 +110,7 @@
         margin-bottom: 1rem; /* Add spacing between description and buttons */
         display: -webkit-box; /* Create a flexible box for text */
         -webkit-line-clamp: 3; /* Limit text to 3 lines */
+        line-clamp: 3; /* Standard property for compatibility */
         -webkit-box-orient: vertical; /* Define the orientation of the box */
         overflow: hidden; /* Hide overflowing text */
         text-overflow: ellipsis; /* Add "..." for overflowing text */
