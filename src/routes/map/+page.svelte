@@ -1,5 +1,5 @@
 <script>
-    export let data;
+    let { data } = $props();
     import { onMount } from "svelte";
     import "leaflet/dist/leaflet.css";
     import MapDestinationCard from "$lib/components/MapDestinationCard.svelte";
