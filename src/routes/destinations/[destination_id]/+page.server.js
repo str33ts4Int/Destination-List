@@ -1,6 +1,7 @@
 import db from "$lib/db.js";
 import { redirect, error } from "@sveltejs/kit";
 
+
 export async function load({ params }) {
     console.log("Received destination_id:", params.destination_id);
 
@@ -15,7 +16,7 @@ export async function load({ params }) {
     return { destination, categories };
 }
 
-export const actions = { 
+export const actions = {
     delete: async ({ request }) => {
         const data = await request.formData();
         await db.deleteDestination(data.get("id"));

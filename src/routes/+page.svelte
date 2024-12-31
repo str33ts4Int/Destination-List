@@ -1,5 +1,24 @@
 <script>
     import './styles.css';
+    import UserReviewsCard from '$lib/components/UserReviewsCard.svelte';
+
+    let reviews = $state([
+        {
+            id: 1,
+            review: "The best app for managing my travel bucket list! Super easy to use and visually stunning.",
+            name: "Alex D."
+        },
+        {
+            id: 2,
+            review: "I love how I can categorize my destinations and keep track of my adventures. Highly recommend!",
+            name: "Sarah M."
+        },
+        {
+            id: 3,
+            review: "A must-have for any traveler! Makes planning so much easier.",
+            name: "John T."
+        }
+    ]);
 </script>
 
 <div class="container">
@@ -87,30 +106,11 @@
     <section class="my-5">
         <h2 class="text-primary text-center">What Users Say</h2>
         <div class="row mt-4">
-            <div class="col-md-4">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <p class="card-text">"The best app for managing my travel bucket list! Super easy to use and visually stunning."</p>
-                        <p class="text-end text-primary">- Alex D.</p>
-                    </div>
+            {#each reviews as review}
+                <div class="col-md-4">
+                    <UserReviewsCard {review}></UserReviewsCard>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <p class="card-text">"I love how I can categorize my destinations and keep track of my adventures. Highly recommend!"</p>
-                        <p class="text-end text-primary">- Sarah M.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <p class="card-text">"A must-have for any traveler! Makes planning so much easier."</p>
-                        <p class="text-end text-primary">- John T.</p>
-                    </div>
-                </div>
-            </div>
+            {/each}
         </div>
     </section>
 
@@ -121,5 +121,3 @@
         <a href="/signup" class="btn btn-light btn-lg rounded-pill shadow">Get Started</a>
     </section>
 </div>
-
-

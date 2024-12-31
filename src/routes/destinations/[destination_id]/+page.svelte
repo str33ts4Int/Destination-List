@@ -1,6 +1,7 @@
 <script>
     import { writable } from "svelte/store";
 
+
     let { data, form } = $props();
     console.log(data);
 
@@ -60,6 +61,7 @@
         </div>
     </div>
 </div>
+
 
 <h1 class="mt-4">Update Destination</h1>
 
