@@ -1,7 +1,8 @@
 import db from "$lib/db.js";
 import axios from "axios";
+import { API_KEY } from "$env/static/private";
 
-const API_KEY = "e123d594343c7defedeadaf865ca98af"; 
+
 
 export async function load() {
     const destinations = await db.getDestinations();
