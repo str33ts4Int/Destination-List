@@ -7,27 +7,15 @@ body {
     object-fit: cover;
 }
 
-/* About Section */
+
 section {
     margin-top: 2rem;
 }
 
-/* Call to Action */
+
 .bg-primary {
     background: linear-gradient(135deg, #007bff, #0056b3);
 }
-
-.btn-light {
-    color: #007bff;
-    background-color: #ffffff;
-    border: none;
-}
-
-.btn-light:hover {
-    background-color: #f8f9fa;
-    color: #0056b3;
-}
-
 
 form {
     display: flex;
@@ -64,17 +52,30 @@ textarea {
 }
 
 button {
-    padding: 10px 20px;
-    font-size: 16px;
-    color: white;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
+}
+
+.btn-light {
+  color: #007bff;
+  background-color: white;
+  border: 2px solid #007bff;
+  transition: all 0.3s ease;
+}
+
+.btn-light:hover {
+  color: white;
+  background-color: #007bff;
 }
 
 .container {
@@ -85,32 +86,29 @@ button:hover {
     margin-right: auto;
 }
 
-  /* General styles for body and html */
+  
   body, html {
     margin: 0;
     padding: 0;
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    box-sizing: border-box;
     background-color: #f8f9fa;
+    box-sizing: border-box;
   }
 
-  /* Navbar styling */
+  
 .navbar {
   display: flex;
   justify-content: space-between; /* Align items to left and right */
   align-items: center;
   padding: 1rem 2rem; /* Add spacing */
-  background-color: rgb(62, 98, 174);
+  background: linear-gradient(90deg, #004c8c, #007bff);
   box-shadow: 0 2px 4px rgba(68, 145, 137, 0.1);
 }
 
 .navbar-brand {
+  font-size: 1.5rem;
   display: flex;
   align-items: center;
-  color: #ffffff !important;
-  font-size: 1.5rem;
-  text-decoration: none;
-  margin-right: 2rem; /* Space between brand and links */
 }
 
 .navbar-nav {
@@ -125,17 +123,15 @@ button:hover {
 
 .navbar-nav .nav-link {
   font-size: 1rem;
-  font-weight: 500;
-  color: #d1d1d1;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  font-weight: bold;
+  color: #dec7c7 !important;
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link.active {
-  color: #00bcd4;
-  font-weight: bold;
+.navbar-nav .nav-link:hover {
+  color: #ffeb3b !important;
+  font-weight: bolder;
 }
+
 
   .logo-icon {
     font-size: 1.8rem;
@@ -238,7 +234,7 @@ button:hover {
 .search-bar button {
   flex-shrink: 0;
   border-radius: 0 25px 25px 0;
-  background: linear-gradient(90deg, #00c853, #64dd17); /* Gradient for modern look */
+  background: linear-gradient(90deg, #0099c8, #1738dd); /* Gradient for modern look */
   color: #fff;
   font-weight: bold;
   transition: transform 0.2s ease;
@@ -281,4 +277,43 @@ button:hover {
   width: 100%;
   text-align: left;
   cursor: pointer;
+}
+
+/* Ready to Explore Section */
+.full-width-section {
+  width: 100vw;
+  margin: 0;
+  margin-left: calc(50% - 50vw);
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: white;
+}
+
+/* Logo Container Styling */
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none; /* Remove underline */
+  color: #ffffff; /* Default white color */
+  transition: transform 0.3s ease, color 0.3s ease; /* Smooth scaling and color transition */
+}
+
+/* Hover effect for the logo container */
+.logo-container:hover {
+  transform: scale(1.1); /* Slightly enlarge the entire link */
+  color: #ffee58; /* Change the text and icon color to a yellow tone */
+}
+
+/* Globe Icon Styling */
+.logo-icon {
+  transition: transform 0.3s ease; /* Smooth transform effect */
+}
+
+/* Rotate the globe icon on hover */
+.logo-container:hover .logo-icon {
+  transform: rotate(20deg); /* Rotate slightly */
+}
+
+/* Text Styling */
+.logo-text {
+  transition: color 0.3s ease; /* Smooth text color transition */
 }
