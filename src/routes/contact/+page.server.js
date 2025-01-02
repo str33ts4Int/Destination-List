@@ -1,18 +1,19 @@
-function form() {
-    alert(`Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nReason: ${reason}`);
-    
-    // Reset form fields
-    firstName = '';
-    lastName = '';
-    email = '';
-    phone = '';
-    reason = '';
-    
-    // Show submitted message
-    submitted = true;
+export const actions = {
+    default: async ({ request }) => {
+        const formData = await request.formData();
+        const firstName = formData.get('firstName');
+        const lastName = formData.get('lastName');
+        const email = formData.get('email');
+        const phone = formData.get('phone');
+        const reason = formData.get('reason');
 
-    // Hide the message after 3 seconds
-    setTimeout(() => {
-        submitted = false;
-    }, 3000);
-}
+        // Here you can handle the form data, e.g., save it to a database or send an email
+
+        console.log('Form submitted:', { firstName, lastName, email, phone, reason });
+
+        return {
+            success: true,
+            message: 'Your message has been sent.'
+        };
+    }
+};

@@ -6,17 +6,18 @@
     <div class="card-body">
         <h5 class="card-title">{destination.name}</h5>
         <p class="card-text">{destination.description}</p>
+        <a href={`/destinations/${destination._id}`} class="btn btn-primary btn-sm rounded-pill mt-auto">
+            View Destination
+        </a>
     </div>
 </div>
 
 <style>
     .map-destination-card {
-        border-radius: 8px; /* Rounded corners for card */
-        overflow: hidden; /* Prevent overflow for rounded corners */
-        transition:
-            transform 0.2s ease,
-            box-shadow 0.2s ease; /* Smooth hover effect */
-        height: 100%; /* Ensure all cards are the same height */
+        border-radius: 8px; 
+        overflow: hidden; 
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        height: 100%; 
         display: flex;
         flex-direction: column;
     }
@@ -35,11 +36,16 @@
 
     .map-destination-card .card-title {
         color: #007bff; /* Bootstrap primary color for title */
-        margin-bottom: 0.5rem; /* Add spacing below title */
+        margin-bottom: 1rem; /* Add spacing below title */
     }
 
     .map-destination-card .card-text {
-        color: #6c757d; /* Bootstrap muted color for text */
-        margin-bottom: 1rem; /* Add spacing between description and buttons */
+        color: #6c757d; 
+        margin-bottom: 1rem; 
     }
+
+    .map-destination-card .btn {
+        margin-top: auto; 
+    }
+
 </style>

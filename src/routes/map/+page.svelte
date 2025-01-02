@@ -77,11 +77,10 @@
     });
 </script>
 
-<h1 class="text-center mb-4">Destinations on the Map</h1>
-
+<h1 class="display-4 text-primary fw-bold mt-4">Destinations on the world map</h1>
 <div
     id="map"
-    style="height: 800px; border-radius: 8px; overflow: hidden;"
+    style="height: 800px; width: 70%; border-radius: 8px; overflow: hidden; margin: 0 auto;"
 ></div>
 
 <div class="row g-4 mt-4">

@@ -1,26 +1,48 @@
 <script>
-    let { form } = $props();
-    let firstName = $state();
-    let lastName = $state();
-    let email = $state();
-    let phone = $state();
-    let reason = $state();
-    let submitted = $state(false);
+    import { onMount } from 'svelte';
+    import { page } from '$app/stores';
+
+    let firstName = '';
+    let lastName = '';
+    let email = '';
+    let phone = '';
+    let reason = '';
+    let submitted = false;
+    let message = '';
+
+    $: if ($page.form?.success) {
+        submitted = true;
+        message = $page.form.message;
+
+        // Reset form fields
+        firstName = '';
+        lastName = '';
+        email = '';
+        phone = '';
+        reason = '';
+
+        // Hide the message after 3 seconds
+        setTimeout(() => {
+            submitted = false;
+        }, 6000);
+    }
 </script>
 
+<div class="container d-flex flex-column min-vh-100">
 <div class="contact-container">
     <h1 class="text-center text-primary display-4 mb-4">Contact Us</h1>
     {#if submitted}
         <div class="alert alert-success text-center" role="alert">
-            Thank you for your message! We will get back to you shortly.
+            {message}
         </div>
     {/if}
-    <form on:submit|preventDefault={form} class="contact-form">
+    <form method="POST" class="contact-form">
         <div class="form-group">
             <label for="firstName">First Name</label>
             <input
                 type="text"
                 id="firstName"
+                name="firstName"
                 bind:value={firstName}
                 class="form-control"
                 placeholder="Enter your first name"
@@ -32,6 +54,7 @@
             <input
                 type="text"
                 id="lastName"
+                name="lastName"
                 bind:value={lastName}
                 class="form-control"
                 placeholder="Enter your last name"
@@ -43,6 +66,7 @@
             <input
                 type="email"
                 id="email"
+                name="email"
                 bind:value={email}
                 class="form-control"
                 placeholder="Enter your email address"
@@ -54,6 +78,7 @@
             <input
                 type="tel"
                 id="phone"
+                name="phone"
                 bind:value={phone}
                 class="form-control"
                 placeholder="Enter your phone number"
@@ -64,6 +89,7 @@
             <label for="reason">Reason for Enquiry</label>
             <textarea
                 id="reason"
+                name="reason"
                 bind:value={reason}
                 class="form-control"
                 placeholder="Tell us why you're reaching out"
@@ -73,82 +99,68 @@
         <button type="submit" class="btn btn-primary btn-block mt-4">Submit</button>
     </form>
 </div>
+</div>
 
 <style>
-    /* General container styling */
-    .contact-container {
-        max-width: 600px;
-        margin: 2rem auto;
+    .container {
+        display: auto;
+        justify-content: center;
+        align-items: center;
         padding: 2rem;
-        background-color: #ffffff;
-        border-radius: 10px;
+        background-color: #f8f9fa;
+    }
+
+    .contact-container {
+        background: #ffffff;
+        padding: 2rem;
+        border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 1200px; /* Increased max-width */
+        width: 100%;
     }
 
-    /* Form Header */
-    h1 {
-        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    .contact-form {
+        min-height: 800px; /* Added min-height */
     }
 
-    /* Form Group */
-    .form-group {
-        margin-bottom: 1.5rem;
-    }
-
-    /* Labels */
-    label {
+    .contact-form label {
         font-weight: bold;
         margin-bottom: 0.5rem;
-        display: inline-block;
-        font-size: 1rem;
-    }
-
-    /* Inputs and Textarea */
-    .form-control {
-        width: 100%;
-        padding: 0.75rem;
-        font-size: 1rem;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        transition: border-color 0.3s ease;
-    }
-
-    .form-control:focus {
-        border-color: #007bff;
-        outline: none;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
-    }
-
-    textarea {
-        min-height: 120px;
-        resize: vertical;
-    }
-
-    /* Submit Button */
-    .btn-block {
         display: block;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
         width: 100%;
-    }
-
-    .btn-primary {
         padding: 0.75rem;
-        font-size: 1.1rem;
-        border-radius: 5px;
-        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        font-size: 1rem;
     }
 
-    .btn-primary:hover {
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        border-color: #80bdff;
+        outline: none;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
+
+    .contact-form button {
+        background-color: #007bff;
+        color: #ffffff;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 4px;
+        font-size: 1.25rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .contact-form button:hover {
         background-color: #0056b3;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
-    /* Success Alert */
-    .alert-success {
+    .alert {
         margin-bottom: 1.5rem;
-        padding: 1rem;
-        border-radius: 5px;
-        background-color: #d4edda;
-        color: #155724;
-        border: 1px solid #c3e6cb;
     }
 </style>

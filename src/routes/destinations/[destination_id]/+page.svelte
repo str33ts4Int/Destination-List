@@ -40,7 +40,7 @@
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h1 class="card-title text-primary">{destination.name}</h1>
+                <h1 class="card-title text-primary text-start">{destination.name}</h1>
                 <h2 class="card-country text-secondary">{destination.country}</h2>
                 <h4 class="card-text">{destination.description}</h4>
                 <h5 class="card-attraction">
