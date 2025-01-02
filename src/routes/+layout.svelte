@@ -1,5 +1,6 @@
 <script>
   import "./styles.css";
+  import { afterNavigate } from "$app/navigation"; // Import afterNavigate lifecycle function
   let { children } = $props();
 
   let searchQuery = $state(""); // Variable to bind the search input
@@ -55,6 +56,11 @@
     showSuggestions = false;
     window.location.href = suggestion.url;
   }
+
+  // Ensure the page scrolls to the top after navigation
+  afterNavigate(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  });
 </script>
 
 <!-- Navbar -->

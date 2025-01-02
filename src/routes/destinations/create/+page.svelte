@@ -33,8 +33,7 @@
     });
 </script>
 
-<a class="btn btn-primary" href="/destinations">Return</a>
-<h1>Create Destination</h1>
+<a class="btn btn-primary btn-lg rounded-pill shadow mt-4" href="/destinations">← Back to Destinations</a><h1>Create Destination</h1>
 
 <form method="POST" action="?/create">
   <div class="mb-3">

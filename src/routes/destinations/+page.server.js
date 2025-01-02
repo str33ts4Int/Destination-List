@@ -9,7 +9,6 @@ export async function load() {
 export const actions = {
   addToMyList: async ({ request }) => {
     let data = await request.formData();
-
     let id = data.get("id");
     console.log("Adding to my list");
     let destination = {
@@ -20,10 +19,8 @@ export const actions = {
   },
   removeFromMyList: async ({ request }) => {
     let data = await request.formData();
-
     let id = data.get("id");
     console.log("Removing from my list");
-
     let destination = {
       _id: id,
       mylist: false

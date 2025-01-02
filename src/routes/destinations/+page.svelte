@@ -3,16 +3,27 @@
     let { data } = $props();
 </script>
 
-<h1>Destinations</h1>
-<h3>Here are all the destinations</h3>
+<div class="container">
+    <!-- Page Title Section -->
+    <header class="text-center py-4">
+        <h1 class="display-4 fw-bold text-primary">Explore Destinations</h1>
+        <p class="text-secondary fs-5">Discover your next adventure from our curated list of destinations!</p>
+    </header>
 
-<div>
-    <a href="/destinations/create" class="btn btn-primary">Add New Destination</a>
+    <!-- Add New Destination Button -->
+    <div class="d-flex justify-content-center mb-4">
+        <a href="/destinations/create" class="btn btn-lg btn-success rounded-pill shadow px-4 py-2">
+            ➕ Add New Destination
+        </a>
+    </div>
+
+    <!-- Destinations Grid -->
+    <div class="row g-4 mt-3">
+        {#each data.destinations as destination}
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <DestinationCard {destination}></DestinationCard>
+            </div>
+        {/each}
+    </div>
 </div>
-<div class="row mt-3">
-    {#each data.destinations as destination}
-        <div class="col-sm-6 col-md-4 col-lg-3 mb-2 gx-2">
-            <DestinationCard {destination}></DestinationCard>
-        </div>
-    {/each}
-</div>
+

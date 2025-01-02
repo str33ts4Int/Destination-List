@@ -25,38 +25,50 @@
 
         <!-- Country -->
         <p class="card-text">
-            <strong>Country:</strong> {destination.country}
+            <strong>Country:</strong>
+            {destination.country}
         </p>
 
         <!-- Description -->
         <p class="card-text">
-            <strong>Description:</strong> {destination.description}
+            <strong>Description:</strong>
+            {destination.description}
         </p>
 
-        <!-- Add/Remove from MyList -->
-        {#if destination.mylist}
-        <form method="POST" action="?/removeFromMyList" class="mt-3" use:enhance>
-            <input name="id" type="hidden" value={destination._id}>
-            <button class="btn btn-remove-from-mylist w-100">Remove from MyList</button>
-        </form>
-        {:else}
-        <form method="POST" action="?/addToMyList" class="mt-3" use:enhance>
-            <input name="id" type="hidden" value={destination._id}>
-            <button class="btn btn-add-to-mylist w-100">Add to MyList</button>
-        </form>
-        {/if}
-
         <!-- Action Buttons -->
-        <div class="mt-3 d-flex justify-content-between">
+        <div class="mt-3 d-flex justify-content-center align-items-center">
             <a
                 href={"/destinations/" + destination._id}
-                class="btn btn-primary-modern btn-sm"
+                class="btn btn-primary-modern btn-sm mx-2"
             >
                 View Details
             </a>
-            <a href="/contact" class="btn btn-outline-secondary-modern btn-sm">
-                Contact Us
-            </a>
+
+            {#if destination.mylist}
+                <form
+                    method="POST"
+                    action="?/removeFromMyList"
+                    use:enhance
+                    class="mx-2"
+                >
+                    <input name="id" type="hidden" value={destination._id} />
+                    <button class="btn btn-remove-from-mylist btn-sm"
+                        >Remove from MyList</button
+                    >
+                </form>
+            {:else}
+                <form
+                    method="POST"
+                    action="?/addToMyList"
+                    use:enhance
+                    class="mx-2"
+                >
+                    <input name="id" type="hidden" value={destination._id} />
+                    <button class="btn btn-add-to-mylist btn-sm"
+                        >Add to MyList</button
+                    >
+                </form>
+            {/if}
         </div>
     </div>
 </div>
@@ -64,25 +76,26 @@
 <style>
     /* General Card Styling */
     .destination-card {
-        border-radius: 8px; /* Rounded corners for card */
+        border-radius: 12px; /* More rounded corners for card */
         overflow: hidden; /* Prevent overflow for rounded corners */
         transition:
-            transform 0.2s ease,
-            box-shadow 0.2s ease; /* Smooth hover effect */
+            transform 0.3s ease,
+            box-shadow 0.3s ease; /* Smooth hover effect */
         height: 100%; /* Ensure all cards are the same height */
         display: flex;
         flex-direction: column;
+        background: #fff; /* White background for card */
     }
 
     .destination-card:hover {
-        transform: translateY(-5px); /* Slight lift on hover */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+        transform: translateY(-8px); /* Slight lift on hover */
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
     }
 
     /* Image Styling */
     .destination-card .card-img-top {
         object-fit: cover; /* Ensures images maintain aspect ratio */
-        max-height: 300px; /* Fixed image height */
+        max-height: 250px; /* Fixed image height */
         border-bottom: 1px solid #eaeaea; /* Separation line below the image */
     }
 
@@ -92,16 +105,22 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between; /* Ensure content is spaced evenly */
+        padding: 1.5rem; /* Add padding for better spacing */
     }
 
+    /* Action Buttons */
     .destination-card .card-body .mt-3 {
         margin-top: auto; /* Push buttons to the bottom */
+        display: flex;
+        justify-content: center; /* Center the buttons */
+        gap: 0.5rem; /* Add space between the buttons */
     }
 
     /* Card Title */
     .destination-card .card-title {
-        font-size: 1.25rem; /* Slightly larger title font size */
+        font-size: 1.5rem; /* Larger title font size */
         font-weight: bold;
+        margin-bottom: 0.75rem; /* Add spacing below title */
     }
 
     /* Card Text */
@@ -120,11 +139,16 @@
     .destination-card .btn {
         padding: 0.5rem 1rem; /* Adjust button padding for consistency */
         font-size: 0.9rem; /* Slightly smaller button font size */
+        border-radius: 4px; /* Rounded corners for buttons */
     }
 
     /* Add to MyList Button */
     .btn-add-to-mylist {
-        background: linear-gradient(to right, #00c853, #64dd17); /* Modern green gradient */
+        background: linear-gradient(
+            to right,
+            #00c853,
+            #64dd17
+        ); /* Modern green gradient */
         color: white;
         border: none;
         font-weight: bold;
@@ -133,13 +157,21 @@
     }
 
     .btn-add-to-mylist:hover {
-        background: linear-gradient(to right, #64dd17, #00c853); /* Hover effect */
+        background: linear-gradient(
+            to right,
+            #64dd17,
+            #00c853
+        ); /* Hover effect */
         transform: scale(1.05);
     }
 
     /* Remove from MyList Button */
     .btn-remove-from-mylist {
-        background: linear-gradient(to right, #d50000, #ff1744); /* Modern red gradient */
+        background: linear-gradient(
+            to right,
+            #d50000,
+            #ff1744
+        ); /* Modern red gradient */
         color: white;
         border: none;
         font-weight: bold;
@@ -148,13 +180,21 @@
     }
 
     .btn-remove-from-mylist:hover {
-        background: linear-gradient(to right, #ff1744, #d50000); /* Hover effect */
+        background: linear-gradient(
+            to right,
+            #ff1744,
+            #d50000
+        ); /* Hover effect */
         transform: scale(1.05);
     }
 
     /* Primary Modern Button */
     .btn-primary-modern {
-        background: linear-gradient(to right, #007bff, #0056b3); /* Modern blue gradient */
+        background: linear-gradient(
+            to right,
+            #007bff,
+            #0056b3
+        ); /* Modern blue gradient */
         color: white;
         border: none;
         font-weight: bold;
@@ -163,23 +203,11 @@
     }
 
     .btn-primary-modern:hover {
-        background: linear-gradient(to right, #0056b3, #007bff); /* Hover effect */
-        transform: scale(1.05);
-    }
-
-    /* Outline Secondary Modern Button */
-    .btn-outline-secondary-modern {
-        border: 2px solid #6c757d; /* Thicker border for modern feel */
-        color: #6c757d; /* Text color */
-        font-weight: bold;
-        text-transform: uppercase;
-        background: transparent;
-        transition: all 0.3s ease;
-    }
-
-    .btn-outline-secondary-modern:hover {
-        background: #6c757d; /* Darker background on hover */
-        color: #ffffff; /* White text on hover */
+        background: linear-gradient(
+            to right,
+            #0056b3,
+            #007bff
+        ); /* Hover effect */
         transform: scale(1.05);
     }
 </style>

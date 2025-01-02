@@ -7,32 +7,178 @@ body {
     object-fit: cover;
 }
 
-
 section {
-    margin-top: 2rem;
+  margin-top: 2rem;
+  padding: 2rem;
+  background: #f8f9fa; /* Light grey background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
 }
 
+section:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
 
 .bg-primary {
     background: linear-gradient(135deg, #007bff, #0056b3);
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    max-width: 400px;
-    margin: auto;
-    background-color: rgb(255, 255, 255);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  max-width: auto;
+  margin: auto;
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa); /* Subtle gradient background */
+  padding: auto;
+  border-radius: 15px; /* Softer corners for modern look */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+  border: 1px solid #e0e0e0; /* Subtle border for cleaner look */
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0056b3; /* Updated blue color */
+  margin-bottom: 20px;
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px; /* Better spacing between fields */
 }
+
+label {
+  margin-bottom: 10px; /* More space between label and input */
+  font-weight: bold;
+  font-size: 1rem;
+  color: #333; /* Darker text for better readability */
+}
+
+input,
+textarea {
+  padding: 12px; /* Slightly larger padding for a cleaner feel */
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Rounded corners for inputs */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight inset shadow for depth */
+}
+
+input:focus,
+textarea:focus {
+  border-color: #007bff; /* Blue focus border */
+  outline: none;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.4); /* Glowing effect on focus */
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px; /* Ensure enough height for text area */
+}
+
+
+button:active {
+  transform: scale(0.98); /* Slight click effect */
+}
+
+/* Success Button */
+.btn-success {
+  background: linear-gradient(to right, #28a745, #218838); /* Green gradient */
+  color: white;
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.4); /* Subtle shadow */
+}
+
+.btn-success:hover {
+  background: linear-gradient(to right, #218838, #28a745); /* Hover effect */
+}
+
+/* Danger Button */
+.btn-danger {
+  background: linear-gradient(to right, #dc3545, #c82333); /* Red gradient */
+  color: white;
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4); /* Subtle shadow */
+}
+
+.btn-danger:hover {
+  background: linear-gradient(to right, #c82333, #dc3545); /* Hover effect */
+}
+
+/* Tags */
+#destination-tags button {
+  padding: 10px 15px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  border-radius: 15px; /* Fully rounded buttons */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#destination-tags button:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+.btn-lg {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.25rem;
+}
+
+.rounded-pill {
+  border-radius: 50px;
+}
+
+.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline-primary {
+  border: 1px solid #007bff;
+  background: white;
+  color: #007bff;
+}
+
+.btn-outline-primary:hover {
+  background: #007bff;
+  color: white;
+}
+
+/* Alerts */
+.alert {
+  border-radius: 8px;
+  padding: 15px;
+  font-size: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.alert-success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
 
 label {
     margin-bottom: 8px;
