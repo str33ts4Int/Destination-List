@@ -74,6 +74,9 @@
 </div>
 
 <style>
+form {
+    padding: 0%;
+}
     /* General Card Styling */
     .destination-card {
         border-radius: 12px; /* More rounded corners for card */

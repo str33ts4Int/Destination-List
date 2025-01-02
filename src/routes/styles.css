@@ -7,31 +7,22 @@ body {
     object-fit: cover;
 }
 
-section {
-  margin-top: 2rem;
-  padding: 2rem;
-  background: #f8f9fa; /* Light grey background */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-}
 
-section:hover {
-  transform: translateY(-5px); /* Slight lift on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
-}
+
 
 .bg-primary {
     background: linear-gradient(135deg, #007bff, #0056b3);
 }
 
+
 form {
   display: flex;
   flex-direction: column;
   max-width: auto;
+  width: 90%;
   margin: auto;
   background: linear-gradient(to bottom, #ffffff, #f8f9fa); /* Subtle gradient background */
-  padding: auto;
+  padding: 20px;
   border-radius: 15px; /* Softer corners for modern look */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
   border: 1px solid #e0e0e0; /* Subtle border for cleaner look */
@@ -230,6 +221,7 @@ button:hover {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+    
 }
 
   
@@ -310,6 +302,7 @@ button:hover {
     background: linear-gradient(135deg, #343a40, #212529);
     padding: 20px;
     color: #ffffff;
+    
   }
 
   .footer a {
