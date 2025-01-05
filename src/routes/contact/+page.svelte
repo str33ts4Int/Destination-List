@@ -15,7 +15,7 @@
             submitted = true;
             message = $page.form.message;
 
-            // Reset form fields
+            // Felder leeren
             firstName = "";
             lastName = "";
             email = "";
@@ -119,12 +119,12 @@
         padding: 2rem;
         border-radius: 8px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        max-width: 1200px; /* Increased max-width */
+        max-width: 1200px; 
         width: 100%;
     }
 
     .contact-form {
-        min-height: 800px; /* Added min-height */
+        min-height: 800px; 
     }
 
     .contact-form label {

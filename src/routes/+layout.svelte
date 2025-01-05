@@ -1,14 +1,14 @@
 <script>
   import "./styles.css";
-  import { afterNavigate } from "$app/navigation"; // Import afterNavigate lifecycle function
+  import { afterNavigate } from "$app/navigation"; 
   let { children } = $props();
 
-  let searchQuery = $state(""); // Variable to bind the search input
+  let searchQuery = $state(""); 
   let suggestions = $state([]);
   let showSuggestions = $state(false);
 
   function handleSearch(event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault(); 
     if (searchQuery.trim() !== "") {
       const matchedSuggestion = suggestions.find(
         (suggestion) =>
@@ -16,10 +16,8 @@
       );
 
       if (matchedSuggestion) {
-        // Redirect to the matched suggestion URL
         window.location.href = matchedSuggestion.url;
       } else {
-        // If no match is found, redirect to a "not found" or search results page
         console.log("No exact match found. Redirecting to search results...");
         window.location.href = `/search?q=${encodeURIComponent(searchQuery)}`;
       }

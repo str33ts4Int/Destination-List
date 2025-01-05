@@ -7,13 +7,9 @@ body {
     object-fit: cover;
 }
 
-
-
-
 .bg-primary {
     background: linear-gradient(135deg, #007bff, #0056b3);
 }
-
 
 form {
   display: flex;
@@ -21,95 +17,93 @@ form {
   max-width: auto;
   width: 90%;
   margin: auto;
-  background: linear-gradient(to bottom, #ffffff, #f8f9fa); /* Subtle gradient background */
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa); 
   padding: 20px;
-  border-radius: 15px; /* Softer corners for modern look */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
-  border: 1px solid #e0e0e0; /* Subtle border for cleaner look */
+  border-radius: 15px; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+  border: 1px solid #e0e0e0; 
 }
 
 h1 {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
-  color: #0056b3; /* Updated blue color */
+  color: #0056b3; 
   margin-bottom: 20px;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px; /* Better spacing between fields */
+  margin-bottom: 20px; 
 }
 
 label {
-  margin-bottom: 10px; /* More space between label and input */
+  margin-bottom: 10px; 
   font-weight: bold;
   font-size: 1rem;
-  color: #333; /* Darker text for better readability */
+  color: #333; 
 }
 
 input,
 textarea {
-  padding: 12px; /* Slightly larger padding for a cleaner feel */
+  padding: 12px; 
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 8px; /* Rounded corners for inputs */
-  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight inset shadow for depth */
+  border-radius: 8px; 
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 input:focus,
 textarea:focus {
-  border-color: #007bff; /* Blue focus border */
+  border-color: #007bff; 
   outline: none;
-  box-shadow: 0 0 6px rgba(0, 123, 255, 0.4); /* Glowing effect on focus */
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.4); 
 }
 
 textarea {
   resize: vertical;
-  min-height: 100px; /* Ensure enough height for text area */
+  min-height: 100px; 
 }
 
 
 button:active {
-  transform: scale(0.98); /* Slight click effect */
+  transform: scale(0.98); 
 }
 
-/* Success Button */
 .btn-success {
-  background: linear-gradient(to right, #28a745, #218838); /* Green gradient */
+  background: linear-gradient(to right, #28a745, #218838); 
   color: white;
-  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.4); /* Subtle shadow */
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.4); 
 }
 
 .btn-success:hover {
-  background: linear-gradient(to right, #218838, #28a745); /* Hover effect */
+  background: linear-gradient(to right, #218838, #28a745); 
 }
 
-/* Danger Button */
 .btn-danger {
-  background: linear-gradient(to right, #dc3545, #c82333); /* Red gradient */
+  background: linear-gradient(to right, #dc3545, #c82333); 
   color: white;
-  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4); /* Subtle shadow */
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4); 
 }
 
 .btn-danger:hover {
-  background: linear-gradient(to right, #c82333, #dc3545); /* Hover effect */
+  background: linear-gradient(to right, #c82333, #dc3545); 
 }
 
-/* Tags */
+
 #destination-tags button {
   padding: 10px 15px;
   font-size: 0.85rem;
   font-weight: bold;
-  border-radius: 15px; /* Fully rounded buttons */
+  border-radius: 15px; 
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 #destination-tags button:hover {
-  transform: scale(1.1); /* Slight zoom effect */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transform: scale(1.1); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .btn-primary {
@@ -236,9 +230,9 @@ button:hover {
   
 .navbar {
   display: flex;
-  justify-content: space-between; /* Align items to left and right */
+  justify-content: space-between; 
   align-items: center;
-  padding: 1rem 2rem; /* Add spacing */
+  padding: 1rem 2rem; 
   background: linear-gradient(90deg, #004c8c, #007bff);
   box-shadow: 0 2px 4px rgba(68, 145, 137, 0.1);
 }
@@ -252,8 +246,8 @@ button:hover {
 .navbar-nav {
   display: flex;
   align-items: center;
-  gap: 1.5rem; /* Space between nav links */
-  margin-right: auto; /* Push nav links to the left */
+  gap: 1.5rem; 
+  margin-right: auto; 
   list-style: none;
   padding: 0;
   margin: 0;
@@ -276,12 +270,12 @@ button:hover {
     margin-right: 0.5rem;
   }
 
-  /* Remove unwanted margin below navbar */
+  
   .navbar + .container {
     margin-top: 0 !important;
   }
 
-  /* Styling navbar links */
+  
 .navbar-nav .nav-link {
   font-size: 1rem;
   font-weight: 500;
@@ -296,7 +290,7 @@ button:hover {
   font-weight: bold;
 }
 
-  /* Footer styling */
+ 
   .footer {
     width: 100vw;
     background: linear-gradient(135deg, #343a40, #212529);
@@ -349,16 +343,16 @@ button:hover {
   
 
 
-/* Styling the search bar */
+
 .search-bar {
-  flex: 0%; /* Take up available space */
-  max-width: 800px; /* Maximum width */
+  flex: 0%; 
+  max-width: 800px; 
   display: flex;
   border-radius: 25px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  position: relative; /* Ensure dropdown positions below */
-  z-index: 10; /* Ensure dropdown is above other elements */
-  margin-left:auto /* Move the search bar to the right */
+  position: relative; 
+  z-index: 10; 
+  margin-left:auto 
 }
 
 .search-bar input {
@@ -367,13 +361,13 @@ button:hover {
   border: 1px solid #ddd;
   padding: 0.8rem;
   font-size: 1rem;
-  z-index: 11; /* Stay above other content */
+  z-index: 11; 
 }
 
 .search-bar button {
   flex-shrink: 0;
   border-radius: 0 25px 25px 0;
-  background: linear-gradient(90deg, #0099c8, #1738dd); /* Gradient for modern look */
+  background: linear-gradient(90deg, #0099c8, #1738dd); 
   color: #fff;
   font-weight: bold;
   transition: transform 0.2s ease;
@@ -383,14 +377,14 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Styling the suggestions list */
+
 .suggestions-list {
   position: absolute;
-  top: calc(100% + 5px); /* Positioned below search input */
+  top: calc(100% + 5px); 
   left: 0;
   right: 0;
-  background: #ffffff; /* White background */
-  border: 1px solid #ddd; /* Add border */
+  background: #ffffff; 
+  border: 1px solid #ddd; 
   list-style: none;
   padding: 0;
   margin: 0;
@@ -418,7 +412,7 @@ button:hover {
   cursor: pointer;
 }
 
-/* Ready to Explore Section */
+
 .full-width-section {
   width: 100vw;
   margin: 0;
@@ -427,32 +421,28 @@ button:hover {
   color: white;
 }
 
-/* Logo Container Styling */
 .logo-container {
   display: flex;
   align-items: center;
-  text-decoration: none; /* Remove underline */
-  color: #ffffff; /* Default white color */
-  transition: transform 0.3s ease, color 0.3s ease; /* Smooth scaling and color transition */
+  text-decoration: none; 
+  color: #ffffff; 
+  transition: transform 0.3s ease, color 0.3s ease; 
 }
 
-/* Hover effect for the logo container */
 .logo-container:hover {
-  transform: scale(1.1); /* Slightly enlarge the entire link */
-  color: #ffee58; /* Change the text and icon color to a yellow tone */
+  transform: scale(1.1); 
+  color: #ffee58; 
 }
 
-/* Globe Icon Styling */
 .logo-icon {
-  transition: transform 0.3s ease; /* Smooth transform effect */
+  transition: transform 0.3s ease;
 }
 
-/* Rotate the globe icon on hover */
 .logo-container:hover .logo-icon {
-  transform: rotate(20deg); /* Rotate slightly */
+  transform: rotate(20deg); 
 }
 
-/* Text Styling */
+
 .logo-text {
-  transition: color 0.3s ease; /* Smooth text color transition */
+  transition: color 0.3s ease; 
 }

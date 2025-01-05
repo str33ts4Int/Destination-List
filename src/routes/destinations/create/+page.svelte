@@ -1,5 +1,5 @@
 <script>
-  import { writable, get } from "svelte/store"; // Import get from svelte/store
+  import { writable, get } from "svelte/store"; 
   let { form, data } = $props();
   let categories = data.categories;
   let selectedTags = writable(new Set());
@@ -13,7 +13,7 @@
       }
       return tags;
     });
-    console.log("Selected tags:", Array.from(get(selectedTags))); // Use get to access the current value
+    console.log("Selected tags:", Array.from(get(selectedTags))); 
   }
 
   function isSelected(tag) {

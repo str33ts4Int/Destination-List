@@ -28,7 +28,11 @@ async function getDestinations() {
     });
   } catch (error) {
     console.log(error);
-    // TODO: errorhandling
+    // Log the error for debugging purposes
+    console.error("Error fetching destinations:", error.message);
+
+    // Custom error handling (return an error response or rethrow the error)
+    throw new Error("Failed to fetch destinations. Please try again later.");
   }
   return destinations;
 }

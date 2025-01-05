@@ -6,22 +6,22 @@
 
     let map;
 
-    async function geocodeCity(cityname) {
+    async function geocodeCity(name) {
         try {
             const response = await fetch(
-                `https://nominatim.openstreetmap.org/search?city=${encodeURIComponent(cityname)}&format=json`,
+                `https://nominatim.openstreetmap.org/search?city=${encodeURIComponent(name)}&format=json`,
             );
             const result = await response.json();
-            console.log(`Geocoding result for ${cityname}:`, result); // Debug: Log geocoding response
+            console.log(`Geocoding result for ${name}:`, result); // Debug: Log geocoding response
             if (result && result.length > 0) {
                 return {
                     lat: parseFloat(result[0].lat),
                     lon: parseFloat(result[0].lon),
                 };
             }
-            console.error(`Geocoding failed for city: ${cityname}`);
+            console.error(`Geocoding failed for city: ${name}`);
         } catch (error) {
-            console.error(`Error geocoding city ${cityname}:`, error);
+            console.error(`Error geocoding city ${name}:`, error);
         }
         return null;
     }
