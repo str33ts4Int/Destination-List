@@ -114,7 +114,7 @@
         <input
           class="form-control border-0 rounded-start shadow-sm"
           type="search"
-          placeholder="Search destinations..."
+          placeholder="Search..."
           aria-label="Search"
           bind:value={searchQuery}
           oninput={handleInput}
