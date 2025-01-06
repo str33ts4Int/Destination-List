@@ -12,7 +12,7 @@
                 `https://nominatim.openstreetmap.org/search?city=${encodeURIComponent(name)}&format=json`,
             );
             const result = await response.json();
-            console.log(`Geocoding result for ${name}:`, result); // Debug: Log geocoding response
+            console.log(`Geocoding result for ${name}:`, result); 
             if (result && result.length > 0) {
                 return {
                     lat: parseFloat(result[0].lat),
@@ -38,13 +38,13 @@
         }).addTo(map);
 
         if (data && data.destinations) {
-            console.log("Destinations data:", data.destinations); // Debug: Log all destinations
+            console.log("Destinations data:", data.destinations); 
             for (const destination of data.destinations) {
                 const coords = await geocodeCity(destination.name);
                 if (coords) {
                     const customIcon = icon({
                         iconUrl:
-                            "https://cdn-icons-png.flaticon.com/512/684/684908.png", // Custom marker icon
+                            "https://cdn-icons-png.flaticon.com/512/684/684908.png", 
                         iconSize: [25, 41],
                         iconAnchor: [12, 41],
                         popupAnchor: [1, -34],
@@ -60,11 +60,11 @@
                     console.log(
                         `Marker added for ${destination.name} at`,
                         coords,
-                    ); // Debug: Log marker info
+                    ); 
                 } else {
                     console.warn(
                         `No coordinates found for ${destination.name}`,
-                    ); // Debug: Log missing coords
+                    ); 
                 }
             }
         } else {

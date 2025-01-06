@@ -4,7 +4,7 @@
 </script>
 
 <div class="container">
-    <!-- Page Title Section -->
+    <!-- Seitentitel -->
     <header class="text-center py-4">
         <h1 class="display-4 fw-bold text-primary mt-4">Explore Destinations</h1>
         <p class="text-secondary fs-5">Discover your next adventure from our curated list of destinations!</p>

@@ -10,7 +10,7 @@ export async function load() {
 export const actions = {
     create: async ({ request }) => {
         const data = await request.formData();
-        let tags = data.getAll("tags[]"); // Collect all tags
+        let tags = data.getAll("tags[]"); // Alle Tags auslesen
         let destination = {
             name: data.get("name"),
             country: data.get("country"),

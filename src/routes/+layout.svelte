@@ -1,14 +1,14 @@
 <script>
   import "./styles.css";
-  import { afterNavigate } from "$app/navigation"; 
+  import { afterNavigate } from "$app/navigation";
   let { children } = $props();
 
-  let searchQuery = $state(""); 
+  let searchQuery = $state("");
   let suggestions = $state([]);
   let showSuggestions = $state(false);
 
   function handleSearch(event) {
-    event.preventDefault(); 
+    event.preventDefault();
     if (searchQuery.trim() !== "") {
       const matchedSuggestion = suggestions.find(
         (suggestion) =>
@@ -55,7 +55,7 @@
     window.location.href = suggestion.url;
   }
 
-  // Ensure the page scrolls to the top after navigation
+  // Sicherstellen dass die Seite immer oben beginnt
   afterNavigate(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   });
@@ -66,7 +66,7 @@
   <div
     class="container-fluid d-flex align-items-center justify-content-between"
   >
-    <!-- Left side: Logo and Links -->
+    <!-- Linke Seite: Logo and Links -->
     <div class="d-flex align-items-center">
       <a class="navbar-brand fw-bold me-3 logo-container" href="/">
         <span class="logo-icon fs-3 me-2">🌍</span>
@@ -94,7 +94,7 @@
       </ul>
     </div>
 
-    <!-- Right side: Search Bar -->
+    <!-- Rechte Seite: Search Bar -->
     <form class="search-bar d-flex" role="search" onsubmit={handleSearch}>
       <input
         class="form-control border-0 rounded-start shadow-sm"
@@ -126,7 +126,7 @@
   </div>
 </nav>
 
-<!-- Main Content -->
+<!-- Haupt Content -->
 <div class="container mt-5">
   <div class="row">
     <div class="col-lg-12">
@@ -150,6 +150,7 @@
     <p class="mb-4">
       Designed by <span class="text-info fw-bold">Shariaad</span> | Prototyping LN2
     </p>
+    <p class="mb-4">All images were generated using ChatGPT.</p>
 
     <!-- Social Media Links -->
     <div class="mb-4">
@@ -199,4 +200,3 @@
     <p class="mb-0">© 2024 Destination List. All Rights Reserved.</p>
   </div>
 </footer>
-
