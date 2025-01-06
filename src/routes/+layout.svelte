@@ -63,16 +63,28 @@
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
-  <div
-    class="container-fluid d-flex align-items-center justify-content-between"
-  >
-    <!-- Linke Seite: Logo and Links -->
-    <div class="d-flex align-items-center">
-      <a class="navbar-brand fw-bold me-3 logo-container" href="/">
-        <span class="logo-icon fs-3 me-2">🌍</span>
-        <span class="logo-text fs-4">Destination List</span>
-      </a>
-      <ul class="navbar-nav d-flex flex-row align-items-center">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+    <!-- Left Side: Logo -->
+    <a class="navbar-brand fw-bold me-3 logo-container" href="/">
+      <span class="logo-icon fs-3 me-2">🌍</span>
+      <span class="logo-text fs-4">Destination List</span>
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- Navigation Links -->
+      <ul class="navbar-nav me-auto">
         <li class="nav-item">
           <a class="nav-link fw-bold" href="/destinations">Destinations</a>
         </li>
@@ -92,39 +104,44 @@
           <a class="nav-link fw-bold" href="/contact">Contact</a>
         </li>
       </ul>
-    </div>
 
-    <!-- Rechte Seite: Search Bar -->
-    <form class="search-bar d-flex" role="search" onsubmit={handleSearch}>
-      <input
-        class="form-control border-0 rounded-start shadow-sm"
-        type="search"
-        placeholder="Search destinations..."
-        aria-label="Search"
-        bind:value={searchQuery}
-        oninput={handleInput}
-      />
-      <button class="btn btn-success rounded-end shadow-sm px-4" type="submit">
-        Search
-      </button>
-      {#if showSuggestions}
-        <ul class="suggestions-list">
-          {#each suggestions as suggestion}
-            <li>
-              <button
-                type="button"
-                class="suggestion-item"
-                onclick={() => handleSuggestionClick(suggestion)}
-              >
-                {suggestion.name}
-              </button>
-            </li>
-          {/each}
-        </ul>
-      {/if}
-    </form>
+      <!-- Search Bar -->
+      <form
+        class="search-bar d-flex"
+        role="search"
+        onsubmit={handleSearch}
+      >
+        <input
+          class="form-control border-0 rounded-start shadow-sm"
+          type="search"
+          placeholder="Search destinations..."
+          aria-label="Search"
+          bind:value={searchQuery}
+          oninput={handleInput}
+        />
+        <button class="btn btn-success rounded-end shadow-sm px-4" type="submit">
+          Search
+        </button>
+        {#if showSuggestions}
+          <ul class="suggestions-list">
+            {#each suggestions as suggestion}
+              <li>
+                <button
+                  type="button"
+                  class="suggestion-item"
+                  onclick={() => handleSuggestionClick(suggestion)}
+                >
+                  {suggestion.name}
+                </button>
+              </li>
+            {/each}
+          </ul>
+        {/if}
+      </form>
+    </div>
   </div>
 </nav>
+
 
 <!-- Haupt Content -->
 <div class="container mt-5">
