@@ -23,20 +23,20 @@
     }
 
     .map-destination-card:hover {
-        transform: translateY(-5px); /* Slight lift on hover */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+        transform: translateY(-5px); 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
     }
 
     .map-destination-card .card-body {
         flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: space-between; /* Ensure content is spaced evenly */
+        justify-content: space-between; 
     }
 
     .map-destination-card .card-title {
-        color: #007bff; /* Bootstrap primary color for title */
-        margin-bottom: 1rem; /* Add spacing below title */
+        color: #007bff; 
+        margin-bottom: 1rem; 
     }
 
     .map-destination-card .card-text {

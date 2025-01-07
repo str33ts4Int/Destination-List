@@ -77,81 +77,73 @@
 form {
     padding: 0%;
 }
-    /* General Card Styling */
     .destination-card {
-        border-radius: 12px; /* More rounded corners for card */
-        overflow: hidden; /* Prevent overflow for rounded corners */
+        border-radius: 12px; 
+        overflow: hidden; 
         transition:
             transform 0.3s ease,
-            box-shadow 0.3s ease; /* Smooth hover effect */
-        height: 100%; /* Ensure all cards are the same height */
+            box-shadow 0.3s ease; 
+        height: 100%; 
         display: flex;
         flex-direction: column;
-        background: #fff; /* White background for card */
+        background: #fff;
     }
 
     .destination-card:hover {
-        transform: translateY(-8px); /* Slight lift on hover */
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+        transform: translateY(-8px); 
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); 
     }
 
-    /* Image Styling */
     .destination-card .card-img-top {
-        object-fit: cover; /* Ensures images maintain aspect ratio */
-        max-height: 250px; /* Fixed image height */
-        border-bottom: 1px solid #eaeaea; /* Separation line below the image */
+        object-fit: cover; 
+        max-height: 250px; 
+        border-bottom: 1px solid #eaeaea; 
     }
 
-    /* Ensure card body takes up remaining space */
     .destination-card .card-body {
         flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: space-between; /* Ensure content is spaced evenly */
-        padding: 1.5rem; /* Add padding for better spacing */
+        justify-content: space-between; 
+        padding: 1.5rem; 
     }
 
-    /* Action Buttons */
     .destination-card .card-body .mt-3 {
-        margin-top: auto; /* Push buttons to the bottom */
+        margin-top: auto; 
         display: flex;
-        justify-content: center; /* Center the buttons */
-        gap: 0.5rem; /* Add space between the buttons */
+        justify-content: center; 
+        gap: 0.5rem; 
     }
 
-    /* Card Title */
     .destination-card .card-title {
-        font-size: 1.5rem; /* Larger title font size */
+        font-size: 1.5rem; 
         font-weight: bold;
-        margin-bottom: 0.75rem; /* Add spacing below title */
+        margin-bottom: 0.75rem; 
     }
 
-    /* Card Text */
     .destination-card .card-text {
-        color: #6c757d; /* Bootstrap muted color for text */
-        margin-bottom: 1rem; /* Add spacing between description and buttons */
-        display: -webkit-box; /* Create a flexible box for text */
-        -webkit-line-clamp: 3; /* Limit text to 3 lines */
-        line-clamp: 3; /* Standard property for compatibility */
-        -webkit-box-orient: vertical; /* Define the orientation of the box */
-        overflow: hidden; /* Hide overflowing text */
-        text-overflow: ellipsis; /* Add "..." for overflowing text */
+        color: #6c757d; 
+        margin-bottom: 1rem; 
+        display: -webkit-box; 
+        -webkit-line-clamp: 3; 
+        line-clamp: 3; 
+        -webkit-box-orient: vertical; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
     }
 
-    /* Buttons */
     .destination-card .btn {
-        padding: 0.5rem 1rem; /* Adjust button padding for consistency */
-        font-size: 0.9rem; /* Slightly smaller button font size */
-        border-radius: 4px; /* Rounded corners for buttons */
+        padding: 0.5rem 1rem; 
+        font-size: 0.9rem; 
+        border-radius: 4px; 
     }
 
-    /* Add to MyList Button */
     .btn-add-to-mylist {
         background: linear-gradient(
             to right,
             #00c853,
             #64dd17
-        ); /* Modern green gradient */
+        ); 
         color: white;
         border: none;
         font-weight: bold;
@@ -164,17 +156,16 @@ form {
             to right,
             #64dd17,
             #00c853
-        ); /* Hover effect */
+        ); 
         transform: scale(1.05);
     }
 
-    /* Remove from MyList Button */
     .btn-remove-from-mylist {
         background: linear-gradient(
             to right,
             #d50000,
             #ff1744
-        ); /* Modern red gradient */
+        ); 
         color: white;
         border: none;
         font-weight: bold;
@@ -187,17 +178,16 @@ form {
             to right,
             #ff1744,
             #d50000
-        ); /* Hover effect */
+        ); 
         transform: scale(1.05);
     }
 
-    /* Primary Modern Button */
     .btn-primary-modern {
         background: linear-gradient(
             to right,
             #007bff,
             #0056b3
-        ); /* Modern blue gradient */
+        ); 
         color: white;
         border: none;
         font-weight: bold;
@@ -210,7 +200,7 @@ form {
             to right,
             #0056b3,
             #007bff
-        ); /* Hover effect */
+        ); 
         transform: scale(1.05);
     }
 </style>

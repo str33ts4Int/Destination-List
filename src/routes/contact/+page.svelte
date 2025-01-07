@@ -19,10 +19,9 @@
             firstName = "";
             lastName = "";
             email = "";
-            phone = "";
+            phone = ""; 
             reason = "";
 
-            // Hide the message after 6 seconds
             setTimeout(() => {
                 submitted = false;
             }, 6000);

@@ -50,6 +50,7 @@
         class="form-control"
         type="text"
         bind:value={$destination.name}
+        required
       />
     </div>
     <div class="mb-3">
@@ -60,6 +61,7 @@
         class="form-control"
         type="text"
         bind:value={$destination.country}
+        required
       />
     </div>
     <div class="mb-3">
@@ -70,6 +72,7 @@
         name="description"
         class="form-control"
         bind:value={$destination.description}
+        required
       ></textarea>
     </div>
     <div class="mb-3">
@@ -81,6 +84,7 @@
         name="main_attraction"
         class="form-control"
         bind:value={$destination.main_attraction}
+        required
       ></textarea>
     </div>
     <div class="mb-3">
@@ -92,6 +96,7 @@
         name="best_season_to_visit"
         class="form-control"
         bind:value={$destination.best_season_to_visit}
+        required
       ></textarea>
     </div>
     <div class="mb-3">

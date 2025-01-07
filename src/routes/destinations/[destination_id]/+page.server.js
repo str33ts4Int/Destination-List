@@ -1,10 +1,8 @@
 import db from "$lib/db.js";
 import { redirect, error } from "@sveltejs/kit";
 
-
 export async function load({ params }) {
     console.log("Received destination_id:", params.destination_id);
-
     const destination = await db.getDestination(params.destination_id);
     const categories = await db.getCategories();
 
@@ -12,7 +10,6 @@ export async function load({ params }) {
         console.log("Destination not found:", params.destination_id);
         throw error(404, "Destination not found");
     }
-
     return { destination, categories };
 }
 

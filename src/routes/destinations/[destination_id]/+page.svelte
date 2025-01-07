@@ -15,7 +15,7 @@
             } else {
                 tags.add(tag);
             }
-            return tags; 
+            return tags;
         });
     }
 
@@ -28,7 +28,9 @@
     }
 </script>
 
-<a class="btn btn-primary btn-lg rounded-pill shadow mt-4" href="/destinations">← Back to Destinations</a>
+<a class="btn btn-primary btn-lg rounded-pill shadow mt-4" href="/destinations"
+    >← Back to Destinations</a
+>
 <div class="card shadow-sm mt-3">
     <div class="row g-0">
         <div class="col-md-4">
@@ -40,17 +42,27 @@
         </div>
         <div class="col-md-8">
             <div class="card-body">
-                <h1 class="card-title text-primary text-start">{destination.name}</h1>
-                <h2 class="card-country text-secondary">{destination.country}</h2>
-                <h4 class="card-text">{destination.description}</h4>
+                <h1 class="card-title text-primary text-start">
+                    {destination.name}
+                </h1>
+                <h2 class="card-country text-secondary">
+                    {destination.country}
+                </h2>
+                <h4 class="card-text">
+                    <strong>Description:</strong>
+                    {destination.description}
+                </h4>
                 <h5 class="card-attraction">
-                    <strong>Main attractions:</strong> {destination.main_attraction}
+                    <strong>Main attractions:</strong>
+                    {destination.main_attraction}
                 </h5>
                 <h5 class="card-season">
-                    <strong>Best season to visit:</strong> {destination.best_season_to_visit}
+                    <strong>Best season to visit:</strong>
+                    {destination.best_season_to_visit}
                 </h5>
                 <h5 class="card-tags">
-                    <strong>Tags:</strong> {destination.tags.join(', ')}
+                    <strong>Tags:</strong>
+                    {destination.tags.join(", ")}
                 </h5>
             </div>
         </div>
@@ -82,28 +94,34 @@
         />
     </div>
     <div class="mb-3">
-        <label for="destination-description" class="form-label">Description</label>
+        <label for="destination-description" class="form-label"
+            >Description</label
+        >
         <textarea
             id="destination-description"
             name="description"
-            class="form-control"
-        >{destination.description}</textarea>
+            class="form-control">{destination.description}</textarea
+        >
     </div>
     <div class="mb-3">
-        <label for="destination-main_attraction" class="form-label">Main attraction</label>
+        <label for="destination-main_attraction" class="form-label"
+            >Main attraction</label
+        >
         <textarea
             id="destination-main_attraction"
             name="main_attraction"
-            class="form-control"
-        >{destination.main_attraction}</textarea>
+            class="form-control">{destination.main_attraction}</textarea
+        >
     </div>
     <div class="mb-3">
-        <label for="destination-best_season_to_visit" class="form-label">Best season to visit</label>
+        <label for="destination-best_season_to_visit" class="form-label"
+            >Best season to visit</label
+        >
         <textarea
             id="destination-best_season_to_visit"
             name="best_season_to_visit"
-            class="form-control"
-        >{destination.best_season_to_visit}</textarea>
+            class="form-control">{destination.best_season_to_visit}</textarea
+        >
     </div>
     <div class="mb-3">
         <label for="destination-tags" class="form-label">Tags</label>
@@ -111,7 +129,9 @@
             {#each categories as category}
                 <button
                     type="button"
-                    class="btn {$selectedTags.has(category.name) ? 'btn-primary' : 'btn-outline-primary'} btn-sm me-2 mb-2"
+                    class="btn {$selectedTags.has(category.name)
+                        ? 'btn-primary'
+                        : 'btn-outline-primary'} btn-sm me-2 mb-2"
                     onclick={() => toggleTag(category.name)}
                 >
                     {category.name}
@@ -124,7 +144,9 @@
             <input type="hidden" name="tags[]" value={tag} />
         {/each}
     </div>
-    <button type="submit" class="btn btn-success w-100">Update Destination</button>
+    <button type="submit" class="btn btn-success w-100"
+        >Update Destination</button
+    >
 </form>
 
 {#if form?.success}
@@ -135,7 +157,9 @@
 
 <form method="POST" action="?/delete" class="mt-4">
     <input type="hidden" name="id" value={destination._id} />
-    <button type="submit" class="btn btn-danger w-100">Delete Destination</button>
+    <button type="submit" class="btn btn-danger w-100"
+        >Delete Destination</button
+    >
 </form>
 
 {#if form?.deleteSuccess}

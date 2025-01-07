@@ -18,6 +18,7 @@
         name="name"
         class="form-control rounded-pill"
         type="text"
+        required
       />
     </div>
     <div class="mb-3">
@@ -28,6 +29,7 @@
         id="category-description"
         name="description"
         class="form-control rounded"
+        required
       ></textarea>
     </div>
     <button type="submit" class="btn btn-success btn-lg rounded-pill w-100"

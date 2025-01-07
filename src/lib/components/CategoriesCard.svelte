@@ -37,29 +37,27 @@
 </div>
 
 <style>
-    /* General Card Styling */
     .category-card {
-        height: 100%; /* Adjust card to fit all content dynamically */
+        height: 100%; 
         border: none;
-        border-radius: 20px; /* Rounded corners */
-        overflow: hidden; /* Keep everything tidy */
-        background: linear-gradient(to bottom, #ffffff, #f8f9fa); /* Light gradient background */
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+        border-radius: 20px; 
+        overflow: hidden; 
+        background: linear-gradient(to bottom, #ffffff, #f8f9fa); 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
+        transition: transform 0.3s ease, box-shadow 0.3s ease; 
     }
 
     .category-card:hover {
-        transform: translateY(-8px); /* Lift on hover */
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+        transform: translateY(-8px); 
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); 
     }
 
-    /* Image Styling */
     .category-image-container {
-        background: linear-gradient(135deg, #007bff, #0056b3); /* Modern gradient placeholder */
+        background: linear-gradient(135deg, #007bff, #0056b3); 
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 200px; /* Fixed height for consistency */
+        height: 200px; 
         overflow: hidden;
         position: relative;
     }
@@ -67,15 +65,14 @@
     .category-image {
         width: 100%;
         height: 100%;
-        object-fit: cover; /* Ensure image covers container */
-        transition: transform 0.3s ease; /* Smooth zoom effect */
+        object-fit: cover; 
+        transition: transform 0.3s ease; 
     }
 
     .category-image-container:hover .category-image {
-        transform: scale(1.1); /* Slight zoom on hover */
+        transform: scale(1.1); 
     }
 
-    /* Card Body Styling */
     .card-body {
         padding: 1.5rem;
         display: flex;
@@ -83,12 +80,11 @@
         justify-content: space-between;
     }
 
-    /* Title Styling */
     .card-title {
-        font-size: 1.4rem; /* Larger font size */
-        font-weight: 600; /* Bold font */
+        font-size: 1.4rem; 
+        font-weight: 600; 
         color: #007bff;
-        transition: color 0.3s ease; /* Smooth hover transition */
+        transition: color 0.3s ease; 
     }
 
     .card-title a {
@@ -97,50 +93,47 @@
     }
 
     .card-title a:hover {
-        color: #0056b3; /* Darker blue on hover */
+        color: #0056b3; 
     }
 
-    /* Text Styling */
     .card-text {
-        font-size: 1rem; /* Comfortable font size */
-        color: #6c757d; /* Bootstrap muted text color */
-        line-height: 1.5; /* Increase line height for readability */
-        display: -webkit-box; /* Create a flexible box for text */
-        -webkit-line-clamp: 3; /* Limit text to 3 lines */
-        line-clamp: 3; /* Standard property for compatibility */
+        font-size: 1rem; 
+        color: #6c757d; 
+        line-height: 1.5; 
+        display: -webkit-box; 
+        -webkit-line-clamp: 3; 
+        line-clamp: 3; 
         -webkit-box-orient: vertical;
         overflow: hidden;
-        text-overflow: ellipsis; /* Ellipsis for overflow text */
-        margin-bottom: 1rem; /* Spacing below the description */
+        text-overflow: ellipsis; 
+        margin-bottom: 1rem; 
     }
 
-    /* Button Styling */
     .btn-gradient {
         font-size: 1rem;
-        padding: 0.5rem 1.5rem; /* Adjust padding */
-        background: linear-gradient(135deg, #007bff, #0056b3); /* Gradient background */
+        padding: 0.5rem 1.5rem; 
+        background: linear-gradient(135deg, #007bff, #0056b3); 
         color: white;
         border: none;
         font-weight: 600;
-        text-transform: uppercase; /* Make text bold and uppercase */
-        border-radius: 25px; /* Fully rounded */
-        transition: all 0.3s ease; /* Smooth transition */
+        text-transform: uppercase; 
+        border-radius: 25px; 
+        transition: all 0.3s ease; 
     }
 
     .btn-gradient:hover {
-        background: linear-gradient(135deg, #0056b3, #003d80); /* Darker gradient on hover */
-        transform: scale(1.05); /* Slightly larger on hover */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+        background: linear-gradient(135deg, #0056b3, #003d80); 
+        transform: scale(1.05); 
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
     }
 
-    /* Responsive Design */
     @media (max-width: 768px) {
         .category-card {
-            height: auto; /* Adjust height for smaller screens */
+            height: auto; 
         }
 
         .card-body {
-            padding: 1rem; /* Reduce padding */
+            padding: 1rem; 
         }
     }
 </style>
